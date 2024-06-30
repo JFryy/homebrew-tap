@@ -1,27 +1,27 @@
 class Qq < Formula
   desc "Multi-tool structured format processor for query and transcoding"
   homepage "https://github.com/jfryy/qq"
-  url "https://github.com/jfryy/qq/archive/refs/tags/v0.1.5-stable.tar.gz"
-  sha256 "2ce422a2fa1f101bb93690a9115849f7325986ab5732e31a59c811607821c876"
+  url "https://github.com/jfryy/qq/archive/refs/tags/v0.1.6.tar.gz"
+  sha256 "4286f5736d8aad1435954cbbc49aabdfb44b39eb300da777a0b3cf8"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/JFryy/qq/releases/download/v0.1.5-stable/qq-v0.1.5-stable-darwin-amd64.tar.gz"
-      sha256 "913c71c96b456b77a5b17076195966d0ad01322800ac4c1906f01c5194bba95f"
+      url "https://github.com/JFryy/qq/releases/download/v0.1.6/qq-v0.1.6-darwin-amd64.tar.gz"
+      sha256 "3070bd09c274b362a9fe813d6c58d60528e41309097ad7b2af226d4c97f67657"
     elsif Hardware::CPU.arm?
-      url "https://github.com/JFryy/qq/releases/download/v0.1.5-stable/qq-v0.1.5-stable-darwin-arm64.tar.gz"
-      sha256 "eaa9c320ae5265565e88cf0339877f1e23dbb36da77941f93dfa8de16fa3c56d"
+      url "https://github.com/JFryy/qq/releases/download/v0.1.6/qq-v0.1.6-darwin-arm64.tar.gz"
+      sha256 "59c4c86d45782b278ad8318dc34b35875b415e68229cebeba3abe262fbe54167"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/JFryy/qq/releases/download/v0.1.5-stable/qq-v0.1.5-stable-linux-amd64.tar.gz"
-      sha256 "d2d16913d5404b69e86887081d1d8b762825722573325dce59e49762fe1f22e3"
+      url "https://github.com/JFryy/qq/releases/download/v0.1.6/qq-v0.1.6-linux-amd64.tar.gz"
+      sha256 "f1a24fa909ee4a81170971b24825265e1caa399bd5cbaac6a21c609e261e9990"
     elsif Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/JFryy/qq/releases/download/v0.1.5-stable/qq-v0.1.5-stable-linux-arm64.tar.gz"
-      sha256 "5ba6fa5bbd4e7474b948d732482637573f0172fcc81ec257e8bb55c48794bd72"
+      url "https://github.com/JFryy/qq/releases/download/v0.1.6/qq-v0.1.6-linux-arm64.tar.gz"
+      sha256 "c45a1cd25b4786686d9e6db5dab01301d9e370e95b831bc8ca573c6af1aa396f"
     end
   end
 
