@@ -5,21 +5,42 @@ class Qq < Formula
   sha256 "2ce422a2fa1f101bb93690a9115849f7325986ab5732e31a59c811607821c876"
   license "MIT"
 
-  bottle do
-    sha256 cellar: :any_skip_relocation, arm64_sonoma:   "eaa9c320ae5265565e88cf0339877f1e23dbb36da77941f93dfa8de16fa3c56d"
-    sha256 cellar: :any_skip_relocation, arm64_ventura:  "eaa9c320ae5265565e88cf0339877f1e23dbb36da77941f93dfa8de16fa3c56d"
-    sha256 cellar: :any_skip_relocation, arm64_monterey: "eaa9c320ae5265565e88cf0339877f1e23dbb36da77941f93dfa8de16fa3c56d"
-    sha256 cellar: :any_skip_relocation, sonoma:         "913c71c96b456b77a5b17076195966d0ad01322800ac4c1906f01c5194bba95f"
-    sha256 cellar: :any_skip_relocation, ventura:        "913c71c96b456b77a5b17076195966d0ad01322800ac4c1906f01c5194bba95f"
-    sha256 cellar: :any_skip_relocation, monterey:       "913c71c96b456b77a5b17076195966d0ad01322800ac4c1906f01c5194bba95f"
-    sha256 cellar: :any_skip_relocation, x86_64_linux:   "d2d16913d5404b69e86887081d1d8b762825722573325dce59e49762fe1f22e3"
-    sha256 cellar: :any_skip_relocation, arm64_linux:    "d2d16913d5404b69e86887081d1d8b762825722573325dce59e49762fe1f22e3"
+    on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/JFryy/qq/releases/download/v0.1.5-stable/qq-v0.1.5-stable-darwin-amd64.tar.gz"
+      sha256 "913c71c96b456b77a5b17076195966d0ad01322800ac4c1906f01c5194bba95f"
+
+      def install
+        bin.install "qq"
+      end
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/JFryy/qq/releases/download/v0.1.5-stable/qq-v0.1.5-stable-darwin-arm64.tar.gz"
+      sha256 "eaa9c320ae5265565e88cf0339877f1e23dbb36da77941f93dfa8de16fa3c56d"
+
+      def install
+        bin.install "qq"
+      end
+    end
   end
 
-  depends_on "go" => :build
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/JFryy/qq/releases/download/v0.1.5-stable/qq-v0.1.5-stable-linux-amd64.tar.gz.md5"
+      sha256 "d2d16913d5404b69e86887081d1d8b762825722573325dce59e49762fe1f22e3"
 
-  def install
-    system "go", "build", *std_go_args(ldflags: "-s -w")
+      def install
+        bin.install "qq"
+      end
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/JFryy/qq/releases/download/v0.1.5-stable/qq-v0.1.5-stable-linux-arm64.tar.gz"
+      sha256 "5ba6fa5bbd4e7474b948d732482637573f0172fcc81ec257e8bb55c48794bd72"
+
+      def install
+        bin.install "qq"
+      end
+    end
   end
 
 
