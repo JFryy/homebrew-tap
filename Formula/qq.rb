@@ -1,27 +1,27 @@
 class Qq < Formula
   desc "Multi-tool structured format processor for query and transcoding"
   homepage "https://github.com/jfryy/qq"
-  url "https://github.com/jfryy/qq/archive/refs/tags/v0.2.1.tar.gz"
-  sha256 "1c68da487208aa2daad60de0f9d1bec2ca145d066ea912cb7e58b677bcede344"
+  url "https://github.com/jfryy/qq/archive/refs/tags/v0.2.2.tar.gz"
+  sha256 "08b08072b9744103af7ec1447a8976464f69faaf04715f31b3efd4cb8da3adc5"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/JFryy/qq/releases/download/v0.2.1/qq-v0.2.1-darwin-amd64.tar.gz"
-      sha256 "5319a72c981becaf36e572c0d4fc3f4b4a426021a3e7ee037e68893b6211fb9b"
+      url "https://github.com/JFryy/qq/releases/download/v0.2.2/qq-v0.2.2-darwin-amd64.tar.gz"
+      sha256 "0558946c788a67eab90a71cd25d12102a6018e6d76eea4f8f56d5cc48f86f61d"
     elsif Hardware::CPU.arm?
-      url "https://github.com/JFryy/qq/releases/download/v0.2.1/qq-v0.2.1-darwin-arm64.tar.gz"
-      sha256 "ff29d4486565a31360196a9977ed6f07a90f38cfa3c1aacd6e052f84473a9303"
+      url "https://github.com/JFryy/qq/releases/download/v0.2.2/qq-v0.2.2-darwin-arm64.tar.gz"
+      sha256 "c1b6f7feb8a60e0ab0dcf7b18624b9323936055675df319c533f1e38a5c8c64c"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/JFryy/qq/releases/download/v0.2.1/qq-v0.2.1-linux-amd64.tar.gz"
-      sha256 "2df3d20d93051dd34cb009b9a5d0de081dbd439dc02b4d8a4c9a2bb8257586a1"
+      url "https://github.com/JFryy/qq/releases/download/v0.2.2/qq-v0.2.2-linux-amd64.tar.gz"
+      sha256 "776b1e38aab2792cb7824b8cd77299f484481f28b64d7f15da86cb49f7a2a9e2"
     elsif Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/JFryy/qq/releases/download/v0.2.1/qq-v0.2.1-linux-arm64.tar.gz"
-      sha256 "a7f1f19972c19eb895804b2d26ac3f0a8e899384027e630dbf7154b7b6ffb6b8"
+      url "https://github.com/JFryy/qq/releases/download/v0.2.2/qq-v0.2.2-linux-arm64.tar.gz"
+      sha256 "0d6ba30c27c477e4954bf8d24865268dc65c07d2da3f6dd5cee862f83383da2b"
     end
   end
 
