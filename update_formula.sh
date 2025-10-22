@@ -2,7 +2,7 @@
 
 # Constants
 REPO="jfryy/qq"
-VERSION="v0.3.0"
+VERSION="v0.3.1"
 
 # URLs
 URL_SOURCE="https://github.com/$REPO/archive/refs/tags/$VERSION.tar.gz"
