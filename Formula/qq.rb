@@ -1,27 +1,26 @@
 class Qq < Formula
   desc "Multi-tool structured format processor for query and transcoding"
-  homepage "https://github.com/jfryy/qq"
-  url "https://github.com/jfryy/qq/archive/refs/tags/v0.3.3.tar.gz"
-  sha256 "ea705de059cd7b2af7fadbf5c812d5928dcf0f17209045cc6e062e9623915c9b"
+  homepage "https://github.com/JFryy/qq"
+  version "0.4.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/JFryy/qq/releases/download/v0.3.3/qq-v0.3.3-darwin-amd64.tar.gz"
-      sha256 "b4c5a2357f5d62e6da35525c3eeda0e7b4f53c9e81806709e9960f993e8e53eb"
+      url "https://github.com/JFryy/qq/releases/download/v0.4.0/qq-v0.4.0-darwin-amd64.tar.gz"
+      sha256 "0bccf0821f43dce03aa8ac674b3826a6502709c829d5e19d37a6b967bfb539f0"
     elsif Hardware::CPU.arm?
-      url "https://github.com/JFryy/qq/releases/download/v0.3.3/qq-v0.3.3-darwin-arm64.tar.gz"
-      sha256 "45aaa3ec6bb23182efe3c3fcb87c3a71eb17443248c80408a76a7438326ba99d"
+      url "https://github.com/JFryy/qq/releases/download/v0.4.0/qq-v0.4.0-darwin-arm64.tar.gz"
+      sha256 "fcbbe382d29f60a52cb6a63fad675666fa8b06c36445701001c64eeb696d679b"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/JFryy/qq/releases/download/v0.3.3/qq-v0.3.3-linux-amd64.tar.gz"
-      sha256 "de780b0a5f0183850f665b6fe23d8d8c41ed385159cb1c6025e022190e4d960d"
+      url "https://github.com/JFryy/qq/releases/download/v0.4.0/qq-v0.4.0-linux-amd64.tar.gz"
+      sha256 "38478a53ffbc343f64b7c41a7599767e51a92359d25fffa12c495d235317cd6d"
     elsif Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/JFryy/qq/releases/download/v0.3.3/qq-v0.3.3-linux-arm64.tar.gz"
-      sha256 "6008c99cee869bcf6fd4a108127051525a94d28d5d4e468e90b7343caab021cb"
+      url "https://github.com/JFryy/qq/releases/download/v0.4.0/qq-v0.4.0-linux-arm64.tar.gz"
+      sha256 "498a31d18c46ff92e1870340fcb32ccb5130f399d770eadcf1df63ab09512aa4"
     end
   end
 
@@ -31,6 +30,7 @@ class Qq < Formula
 
   test do
     (testpath/"test.json").write('{"somekey": "somevalue"}')
-    assert_equal "somevalue", shell_output("cat test.json | \#{bin}/qq .somekey -r").strip
+    assert_equal "somevalue", shell_output("cat test.json | #{bin}/qq .somekey -r").strip
+    assert_match version.to_s, shell_output("#{bin}/qq --version")
   end
 end
