@@ -1,26 +1,26 @@
 class Qq < Formula
   desc "Multi-tool structured format processor for query and transcoding"
   homepage "https://github.com/JFryy/qq"
-  version "0.4.0"
+  version "0.5.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/JFryy/qq/releases/download/v0.4.0/qq-v0.4.0-darwin-amd64.tar.gz"
-      sha256 "0bccf0821f43dce03aa8ac674b3826a6502709c829d5e19d37a6b967bfb539f0"
+      url "https://github.com/JFryy/qq/releases/download/v0.5.0/qq-v0.5.0-darwin-amd64.tar.gz"
+      sha256 "93d3f049007fae173f602190577af5ce7b798e252e67245ed5b30dce74d14815"
     elsif Hardware::CPU.arm?
-      url "https://github.com/JFryy/qq/releases/download/v0.4.0/qq-v0.4.0-darwin-arm64.tar.gz"
-      sha256 "fcbbe382d29f60a52cb6a63fad675666fa8b06c36445701001c64eeb696d679b"
+      url "https://github.com/JFryy/qq/releases/download/v0.5.0/qq-v0.5.0-darwin-arm64.tar.gz"
+      sha256 "dbdbfa8322bb497eb2995d4f2400287348636750d24a8bec537cdd02f4d5f942"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/JFryy/qq/releases/download/v0.4.0/qq-v0.4.0-linux-amd64.tar.gz"
-      sha256 "38478a53ffbc343f64b7c41a7599767e51a92359d25fffa12c495d235317cd6d"
+      url "https://github.com/JFryy/qq/releases/download/v0.5.0/qq-v0.5.0-linux-amd64.tar.gz"
+      sha256 "8a445b3986ac0fb003b0e341c27dfbe8c4ad43a8d7174e69e76898409909c016"
     elsif Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/JFryy/qq/releases/download/v0.4.0/qq-v0.4.0-linux-arm64.tar.gz"
-      sha256 "498a31d18c46ff92e1870340fcb32ccb5130f399d770eadcf1df63ab09512aa4"
+      url "https://github.com/JFryy/qq/releases/download/v0.5.0/qq-v0.5.0-linux-arm64.tar.gz"
+      sha256 "432604472519ab6d94ed113d9d9fae19a87f04b687c20d8f4b473a952f8ede59"
     end
   end
 
